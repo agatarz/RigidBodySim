@@ -289,23 +289,7 @@ if __name__ == '__main__':
 
     arrGraphData_simu = make_data_to_graph(dataFromSimulation)
     arrGraphData_anal = calculate_analitically()
-    """
-    print(['x', 'y', 't'])
-    print(dataFromSimulation[:20, 0:2])
-    print('.......................')
-    print(['vx', 'vy', 'dt_i'])
-    print(dataFromSimulation[:20, 2:])
-    print('.......................')
-    # print(arrGraphData_simu[:50, 1:])
-
-    print(['s', 't'])
-    print(arrGraphData_simu[:20, 0:2])
-    print('.......................')
-    print(['v', 'a', 'dt_i'])
-    print(arrGraphData_simu[:20, 2:])
-    print('.......................')
-    # print(arrGraphData_simu[:50, 1:])
-    """
+   
     # (t, s) -> (1, 0)
     plt.plot(arrGraphData_simu[:, 1], arrGraphData_simu[:, 0], color="red", label='from simulation')
     # (t, s) -> (2, 0)
@@ -345,68 +329,3 @@ if __name__ == '__main__':
     plt.show()
 
 
-
-
-'''
-    makeAnalytically = True
-    if makeAnalytically:
-        arrGraphData_anal = calculate_analitically()
-
-        # arrGraphData_anal[[]]:
-        # s -> 0
-        # v -> 1
-        # t -> 2
-        # a -> 3
-
-        # (t, s) -> (2, 0)
-        plt.subplot(1, 3, 1)
-        plt.plot(arrGraphData_anal[:, 2], arrGraphData_anal[:, 0], color='blue', label='from calculation')
-
-        # (t, v) -> (2, 1)
-        plt.subplot(1, 3, 2)
-        plt.plot(arrGraphData_anal[:, 2], arrGraphData_anal[:, 1], color='blue', label='from calculation')
-
-        # (t, a) -> (2, 3)
-        plt.subplot(1, 3, 3)
-        plt.plot(arrGraphData_anal[:, 2], arrGraphData_anal[:, 3], color='blue', label='from calculation')
-
-
-    # arrGraphData_simu[[]]:
-    # s -> 0
-    # t -> 1
-    # v -> 2
-    # a -> 3
-    # dt -> 4 - unused
-
-    # (t, s) -> (1, 0)
-    plt.subplot(1, 3, 1)
-    plt.plot(arrGraphData_simu[:, 1], arrGraphData_simu[:, 0], color="red", label='from simulation')
-    plt.title('DISTANCE - TIME')
-    # plt.xlabel('time [s]')
-    plt.ylabel('distance [meters]')
-    plt.legend()
-    plt.xlim(0)
-    plt.ylim(0)
-
-    # (t, v) -> (1, 2)
-    plt.subplot(1, 3, 2)
-    plt.plot(arrGraphData_simu[:, 1], arrGraphData_simu[:, 2], color="red", label='from simulation')
-    plt.title('VELOCITY - TIME')
-    plt.xlabel('time [s]')
-    plt.ylabel('velocity [m/s]')
-    plt.legend()
-    plt.xlim(0)
-    plt.ylim(0)
-
-    # (t, a) -> (1, 3)
-    plt.subplot(1, 3, 3)
-    plt.plot(arrGraphData_simu[:, 1], arrGraphData_simu[:, 3], color="red", label='from simulation')
-    plt.title('ACCELERATION - TIME')
-    plt.xlabel('time [s]')
-    plt.ylabel('acceleration [m/s^2]')
-    plt.legend()
-    plt.xlim(0)
-    plt.ylim(0)
-
-    plt.show()
-'''
